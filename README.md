@@ -36,4 +36,4 @@ gcc snake.c -o snake -lncurses
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+none
