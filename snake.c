@@ -9,11 +9,12 @@
 const int defaultFieldHeight = 15;
 const int defaultFieldWidth  = 30;
 
-#define maxTailLength  30
+#define maxTailLength  35
 
 #define DEFAULT_FPS 5
-#define MAX_FPS 20
-#define CURRENT_FPS(tl) (((MAX_FPS-DEFAULT_FPS)/(maxTailLength-2)*((tl) - 2)) + DEFAULT_FPS )
+#define MAX_FPS 35
+#define CURRENT_FPS(tl) (((MAX_FPS-DEFAULT_FPS)*1.0/(maxTailLength-2)*((tl) - 2)) + DEFAULT_FPS )
+
 
 typedef struct position_t{
   int x;
@@ -51,7 +52,7 @@ int main(int argc, char** argv){
   WINDOW* gameWindow = NULL;
   int starty = 0, startx = 0;
 
-  entity_t snake = {NULL, {{3,3},{3,4},{3,4},{3,4},{3,4},{3,4}}, 20, {0,0}, '$', 'o'};
+  entity_t snake = {NULL, {{3,3},{3,4},{3,4},{3,4},{3,4},{3,4},{3,4},{3,4}}, 8, {0,0}, '$', 'o'};
   //entity_t snake = {NULL, {{3,3},{3,4},{3,5},{3,6},{3,7}, {3,7}, {3,7}, {3,7}, {3,7},{3,7},{3,7},{3,7},{3,7},{3,7}, {3,7}, {3,7}, {3,7}, {3,7}}, 16, {0,0}, 'O', 'o'};
   entity_t apple = {NULL, {-1,-1}, 0, {0,0}, 'X', 'x'};
 
